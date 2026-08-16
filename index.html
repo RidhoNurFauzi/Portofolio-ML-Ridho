@@ -129,6 +129,9 @@
   </ul>
   <div class="train-status" aria-hidden="true">
     <span class="dot"></span>
+    <svg class="loss-spark" viewBox="0 0 100 30" preserveAspectRatio="none">
+      <path id="lossPath" d="M0,3 C12,5 20,9 30,13 C42,18 52,20 62,23 C74,26 88,28 100,29" />
+    </svg>
     epoch <span id="epochNum">0</span>/7 · loss <b id="lossVal">2.31</b>
   </div>
 </nav>
@@ -148,30 +151,33 @@
 
   <!-- ===== HERO ===== -->
   <header class="hero">
-    <div class="term" id="termBox" aria-hidden="true">
-      <div><span class="l">$</span> python init_candidate.py --role="ml_engineer"</div>
-      <div class="out">> loading profile: Ridho Nur Fauzi</div>
-      <div class="out">> stack: TensorFlow · Scikit-learn · SQL · CV/NLP</div>
-      <div class="out">> bangkit_ml_score: 92.90%</div>
-      <div class="ok">> status: model converged ✓<span class="cursor"></span></div>
-    </div>
-    <h1>Ridho Nur <span class="accent">Fauzi</span></h1>
-    <p class="role">
-      <b>ML/DL Engineer &amp; Data Scientist</b> — membangun pipeline machine learning yang reproducible,
-      dari eksplorasi data hingga model deep learning yang terpublikasi di jurnal terindeks SINTA.
-    </p>
+    <canvas id="netCanvas" class="net-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="term" id="termBox" aria-hidden="true">
+        <div class="term-line" data-text="$ python init_candidate.py --role=&quot;ml_engineer&quot;"><span class="l"></span></div>
+        <div class="term-line out" data-text="&gt; loading profile: Ridho Nur Fauzi"></div>
+        <div class="term-line out" data-text="&gt; stack: TensorFlow · Scikit-learn · SQL · CV/NLP"></div>
+        <div class="term-line out" data-text="&gt; bangkit_ml_score: 92.90%"></div>
+        <div class="term-line ok" data-text="&gt; status: model converged ✓"><span class="cursor" style="display:none;"></span></div>
+      </div>
+      <h1>Ridho Nur <span class="accent">Fauzi</span></h1>
+      <p class="role">
+        <b>ML/DL Engineer &amp; Data Scientist</b> — membangun pipeline machine learning yang reproducible,
+        dari eksplorasi data hingga model deep learning yang terpublikasi di jurnal terindeks SINTA.
+      </p>
 
-    <div class="metrics-row">
-      <div class="metric"><div class="v">3</div><div class="k">Publikasi Jurnal</div></div>
-      <div class="metric"><div class="v">4</div><div class="k">Proyek ML/DL</div></div>
-      <div class="metric"><div class="v">92.9%</div><div class="k">Skor Bangkit ML</div></div>
-      <div class="metric"><div class="v">6</div><div class="k">Sertifikasi</div></div>
-    </div>
+      <div class="metrics-row">
+        <div class="metric"><div class="v" data-target="3" data-suffix="">0</div><div class="k">Publikasi Jurnal</div></div>
+        <div class="metric"><div class="v" data-target="4" data-suffix="">0</div><div class="k">Proyek ML/DL</div></div>
+        <div class="metric"><div class="v" data-target="92.9" data-suffix="%" data-decimals="1">0%</div><div class="k">Skor Bangkit ML</div></div>
+        <div class="metric"><div class="v" data-target="6" data-suffix="">0</div><div class="k">Sertifikasi</div></div>
+      </div>
 
-    <div class="hero-cta">
-      <a href="#projects" class="btn primary">Lihat Proyek</a>
-      <a href="#publications" class="btn ghost">Baca Publikasi</a>
-      <a href="mailto:ridho.nurfauzi321@gmail.com" class="btn ghost">Hubungi Saya</a>
+      <div class="hero-cta">
+        <a href="#projects" class="btn primary">Lihat Proyek</a>
+        <a href="#publications" class="btn ghost">Baca Publikasi</a>
+        <a href="mailto:ridho.nurfauzi321@gmail.com" class="btn ghost">Hubungi Saya</a>
+      </div>
     </div>
   </header>
 
@@ -303,7 +309,13 @@
     <div class="proj-grid">
 
       <a class="proj-card" href="https://github.com/ClearSky-Tak" target="_blank" rel="noopener noreferrer">
-        <div class="proj-thumb"><img src="../project/ClearSky.png" alt="Tangkapan layar proyek ClearSky, aplikasi prakiraan cuaca berbasis CNN dan BiLSTM" loading="lazy" decoding="async" /></div>
+        <div class="proj-thumb">
+          <img src="../project/ClearSky.png" alt="Tangkapan layar proyek ClearSky, aplikasi prakiraan cuaca berbasis CNN dan BiLSTM" loading="lazy" decoding="async" />
+          <div class="detect-frame">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <span class="detect-label">cloud_forecast <b class="conf" data-conf="0.94">0.00</b></span>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="period">Sep 2025 — Nov 2025</div>
           <h3>ClearSky — Prakiraan Cuaca Jangka Pendek</h3>
@@ -316,7 +328,13 @@
       </a>
 
       <a class="proj-card" href="https://github.com/RamziAhmar/SurvPlant/tree/model-ml" target="_blank" rel="noopener noreferrer">
-        <div class="proj-thumb"><img src="../project/SurvPlants.png" alt="Tangkapan layar proyek SurvPlant, aplikasi deteksi tanaman liar layak konsumsi" loading="lazy" decoding="async" /></div>
+        <div class="proj-thumb">
+          <img src="../project/SurvPlants.png" alt="Tangkapan layar proyek SurvPlant, aplikasi deteksi tanaman liar layak konsumsi" loading="lazy" decoding="async" />
+          <div class="detect-frame">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <span class="detect-label">edible_plant <b class="conf" data-conf="0.91">0.00</b></span>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="period">Nov 2024 — Des 2024</div>
           <h3>SurvPlant — Deteksi Tanaman Liar Layak Konsumsi</h3>
@@ -329,7 +347,13 @@
       </a>
 
       <a class="proj-card" href="https://github.com/RidhoNurFauzi/Heart-Disease" target="_blank" rel="noopener noreferrer">
-        <div class="proj-thumb"><img src="../project/Heart.png" alt="Visualisasi proyek Heart Disease Detection menggunakan Machine Learning" loading="lazy" decoding="async" /></div>
+        <div class="proj-thumb">
+          <img src="../project/Heart.png" alt="Visualisasi proyek Heart Disease Detection menggunakan Machine Learning" loading="lazy" decoding="async" />
+          <div class="detect-frame">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <span class="detect-label">heart_risk <b class="conf" data-conf="0.89">0.00</b></span>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="period">Okt 2024</div>
           <h3>Heart Disease Detection</h3>
@@ -342,7 +366,13 @@
       </a>
 
       <a class="proj-card" href="https://github.com/MedCorvus/Analisis-Data-Bike-Share-Dataset" target="_blank" rel="noopener noreferrer">
-        <div class="proj-thumb"><img src="../project/DataBike.png" alt="Grafik hasil analisis data Bike Share menggunakan Python dan Pandas" loading="lazy" decoding="async" /></div>
+        <div class="proj-thumb">
+          <img src="../project/DataBike.png" alt="Grafik hasil analisis data Bike Share menggunakan Python dan Pandas" loading="lazy" decoding="async" />
+          <div class="detect-frame">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <span class="detect-label">demand_pattern <b class="conf" data-conf="0.87">0.00</b></span>
+          </div>
+        </div>
         <div class="proj-body">
           <div class="period">Sep 2024</div>
           <h3>Analisis Data Bike Share</h3>
