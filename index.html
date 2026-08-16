@@ -6,20 +6,25 @@
 
 <!-- ===== PRIMARY SEO META ===== -->
 <title>Ridho Nur Fauzi — ML/DL Engineer &amp; Data Scientist</title>
-<meta name="description" content="Portofolio Ridho Nur Fauzi, ML/DL Engineer & Data Scientist dari Universitas Papua. 3 publikasi jurnal terindeks SINTA, proyek CNN-BiLSTM forecasting cuaca, computer vision, dan NLP." />
+<meta name="description" content="Portofolio Ridho Nur Fauzi, ML/DL Engineer & Data Scientist lulusan Cumlaude Universitas Papua (IPK 3.76). 3 publikasi jurnal terindeks SINTA, proyek CNN-BiLSTM, computer vision, dan NLP." />
 <meta name="keywords" content="Ridho Nur Fauzi, Machine Learning Engineer, Deep Learning, Data Scientist, TensorFlow, CNN BiLSTM, Universitas Papua, Bangkit Academy, SINTA journal" />
 <meta name="author" content="Ridho Nur Fauzi" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://ridhonurfauzi.com/" />
-<!-- NOTE: replace https://ridhonurfauzi.com/ above and in the OG/Twitter/JSON-LD
-     tags below with your real deployed domain once the site is live. -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://ridhonurfauzi.netlify.app/" />
+<link rel="alternate" hreflang="id-ID" href="https://ridhonurfauzi.netlify.app/" />
+<link rel="alternate" hreflang="x-default" href="https://ridhonurfauzi.netlify.app/" />
+
 
 <!-- ===== OPEN GRAPH (Facebook, LinkedIn, WhatsApp previews) ===== -->
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Ridho Nur Fauzi — ML/DL Engineer & Data Scientist" />
-<meta property="og:description" content="Portofolio Ridho Nur Fauzi: proyek Machine Learning & Deep Learning, 3 publikasi jurnal terindeks SINTA, dan sertifikasi TensorFlow/DeepLearning.AI." />
-<meta property="og:image" content="https://ridhonurfauzi.com/profile/foto-diri1.png" />
-<meta property="og:url" content="https://ridhonurfauzi.com/" />
+<meta property="og:description" content="Portofolio Ridho Nur Fauzi: proyek Machine Learning & Deep Learning, 3 publikasi jurnal terindeks SINTA, lulusan Cumlaude Universitas Papua." />
+<meta property="og:image" content="https://ridhonurfauzi.netlify.app/profile/foto-diri1.png" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="800" />
+<meta property="og:image:alt" content="Foto profil Ridho Nur Fauzi" />
+<meta property="og:url" content="https://ridhonurfauzi.netlify.app/" />
+<meta property="og:site_name" content="Ridho Nur Fauzi Portfolio" />
 <meta property="og:locale" content="id_ID" />
 <meta property="profile:first_name" content="Ridho" />
 <meta property="profile:last_name" content="Nur Fauzi" />
@@ -28,10 +33,11 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ridho Nur Fauzi — ML/DL Engineer & Data Scientist" />
 <meta name="twitter:description" content="Portofolio ML/DL Engineer & Data Scientist: publikasi jurnal SINTA, proyek CNN-BiLSTM, computer vision, dan NLP." />
-<meta name="twitter:image" content="https://ridhonurfauzi.com/profile/foto-diri1.png" />
+<meta name="twitter:image" content="https://ridhonurfauzi.netlify.app/profile/foto-diri1.png" />
+<meta name="twitter:image:alt" content="Foto profil Ridho Nur Fauzi" />
 
 <meta name="theme-color" content="#0a0e17" />
-<link rel="icon" type="image/png" href="logo/luggage.png" />
+<link rel="icon" type="image/png" href="logo/icons8-terminator-96.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,65 +52,102 @@
   .skip-link:focus{ left:16px; top:16px; width:auto; height:auto; }
 </style>
 
-<!-- ===== STRUCTURED DATA: Person ===== -->
+<!-- ===== STRUCTURED DATA: unified graph (WebPage + Person + Publications) =====
+     A single @graph with @id references lets Google connect the page, the
+     person, and the scholarly articles as one entity instead of three
+     disconnected blocks — stronger signal for Knowledge Panel eligibility. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ridho Nur Fauzi",
-  "url": "https://ridhonurfauzi.com/",
-  "image": "https://ridhonurfauzi.com/profile/foto-diri1.png",
-  "jobTitle": "ML/DL Engineer & Data Scientist",
-  "affiliation": {
-    "@type": "CollegeOrUniversity",
-    "name": "Universitas Papua"
-  },
-  "alumniOf": [
-    { "@type": "CollegeOrUniversity", "name": "Universitas Papua" },
-    { "@type": "EducationalOrganization", "name": "Bangkit Academy" }
-  ],
-  "knowsAbout": ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing", "Data Science", "TensorFlow"],
-  "sameAs": [
-    "https://www.linkedin.com/in/ridhonurfauzi",
-    "https://github.com/RidhoNurFauzi",
-    "https://scholar.google.com/citations?user=gajzMOAAAAAJ&hl=id"
-  ],
-  "email": "mailto:ridho.nurfauzi321@gmail.com"
-}
-</script>
-
-<!-- ===== STRUCTURED DATA: Publications ===== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ScholarlyArticle",
-      "position": 1,
-      "name": "Adaptive Ensemble CNN–BiLSTM untuk Integrasi Citra Awan dan Data Meteorologi BMKG dalam Prediksi Cuaca Jangka Pendek di Manokwari",
-      "author": { "@type": "Person", "name": "Ridho Nur Fauzi" },
-      "datePublished": "2026-07-01",
-      "isPartOf": { "@type": "Periodical", "name": "Jurnal Teknologi Informasi dan Ilmu Komputer (JTIIK)" },
-      "url": "https://jtiik.ub.ac.id/index.php/jtiik/article/view/10866"
+      "@type": "WebSite",
+      "@id": "https://ridhonurfauzi.netlify.app/#website",
+      "url": "https://ridhonurfauzi.netlify.app/",
+      "name": "Ridho Nur Fauzi Portfolio",
+      "inLanguage": "id-ID"
     },
     {
-      "@type": "ScholarlyArticle",
-      "position": 2,
-      "name": "Classification of Wild Edible Plants Using InceptionV3 with Transfer Learning and Metadata Integration as a Decision Support System",
-      "author": { "@type": "Person", "name": "Ridho Nur Fauzi" },
-      "datePublished": "2026",
-      "isPartOf": { "@type": "Periodical", "name": "Indonesian Journal of Artificial Intelligence and Data Mining (IJAIDM)" },
-      "url": "https://ejournal.uin-suska.ac.id/index.php/IJAIDM/article/view/39091"
+      "@type": "WebPage",
+      "@id": "https://ridhonurfauzi.netlify.app/#webpage",
+      "url": "https://ridhonurfauzi.netlify.app/",
+      "name": "Ridho Nur Fauzi — ML/DL Engineer & Data Scientist",
+      "description": "Portofolio Ridho Nur Fauzi, ML/DL Engineer & Data Scientist lulusan Cumlaude Universitas Papua. 3 publikasi jurnal terindeks SINTA, proyek CNN-BiLSTM, computer vision, dan NLP.",
+      "inLanguage": "id-ID",
+      "isPartOf": { "@id": "https://ridhonurfauzi.netlify.app/#website" },
+      "about": { "@id": "https://ridhonurfauzi.netlify.app/#person" },
+      "primaryImageOfPage": "https://ridhonurfauzi.netlify.app/profile/foto-diri1.png",
+      "dateModified": "2026-08-16"
     },
     {
-      "@type": "ScholarlyArticle",
-      "position": 3,
-      "name": "Analisis Sentimen Program Makan Bergizi Gratis Siswa SMAN 01 Manokwari dengan Naïve Bayes",
-      "author": { "@type": "Person", "name": "Ridho Nur Fauzi" },
-      "datePublished": "2025-08-11",
-      "isPartOf": { "@type": "Periodical", "name": "Jurnal Ilmiah Binary STMIK Bina Nusantara Jaya Lubuklinggau" },
-      "url": "https://e-journal.stmik-bnj.ac.id/index.php/jb/article/view/161"
+      "@type": "Person",
+      "@id": "https://ridhonurfauzi.netlify.app/#person",
+      "name": "Ridho Nur Fauzi",
+      "url": "https://ridhonurfauzi.netlify.app/",
+      "image": "https://ridhonurfauzi.netlify.app/profile/foto-diri1.png",
+      "jobTitle": "ML/DL Engineer & Data Scientist",
+      "description": "ML/DL Engineer & Data Scientist lulusan Cumlaude Teknik Informatika Universitas Papua (IPK 3.76), dengan 3 publikasi jurnal terindeks SINTA di bidang computer vision, forecasting, dan NLP.",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universitas Papua"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Bangkit Academy"
+        }
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Bachelor's Degree",
+        "educationalLevel": "Cumlaude, IPK 3.76",
+        "about": "Teknik Informatika",
+        "recognizedBy": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universitas Papua"
+        }
+      },
+      "knowsAbout": ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing", "Data Science", "TensorFlow", "CNN-BiLSTM Forecasting"],
+      "sameAs": [
+        "https://www.linkedin.com/in/ridhonurfauzi",
+        "https://github.com/RidhoNurFauzi",
+        "https://scholar.google.com/citations?user=gajzMOAAAAAJ&hl=id"
+      ],
+      "email": "mailto:ridho.nurfauzi321@gmail.com"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://ridhonurfauzi.netlify.app/#publications",
+      "name": "Research Publications — Ridho Nur Fauzi",
+      "itemListElement": [
+        {
+          "@type": "ScholarlyArticle",
+          "position": 1,
+          "name": "Adaptive Ensemble CNN–BiLSTM untuk Integrasi Citra Awan dan Data Meteorologi BMKG dalam Prediksi Cuaca Jangka Pendek di Manokwari",
+          "author": { "@id": "https://ridhonurfauzi.netlify.app/#person" },
+          "datePublished": "2026-07-01",
+          "isPartOf": { "@type": "Periodical", "name": "Jurnal Teknologi Informasi dan Ilmu Komputer (JTIIK)" },
+          "url": "https://jtiik.ub.ac.id/index.php/jtiik/article/view/10866"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "position": 2,
+          "name": "Classification of Wild Edible Plants Using InceptionV3 with Transfer Learning and Metadata Integration as a Decision Support System",
+          "author": { "@id": "https://ridhonurfauzi.netlify.app/#person" },
+          "datePublished": "2026",
+          "isPartOf": { "@type": "Periodical", "name": "Indonesian Journal of Artificial Intelligence and Data Mining (IJAIDM)" },
+          "url": "https://ejournal.uin-suska.ac.id/index.php/IJAIDM/article/view/39091"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "position": 3,
+          "name": "Analisis Sentimen Program Makan Bergizi Gratis Siswa SMAN 01 Manokwari dengan Naïve Bayes",
+          "author": { "@id": "https://ridhonurfauzi.netlify.app/#person" },
+          "datePublished": "2025-08-11",
+          "isPartOf": { "@type": "Periodical", "name": "Jurnal Ilmiah Binary STMIK Bina Nusantara Jaya Lubuklinggau" },
+          "url": "https://e-journal.stmik-bnj.ac.id/index.php/jb/article/view/161"
+        }
+      ]
     }
   ]
 }
@@ -210,11 +253,11 @@
       </div>
       <div class="about-text">
         <p>
-          Saya mahasiswa Teknik Informatika di Universitas Papua dengan fokus pada
-          <b>Machine Learning</b>, <b>Deep Learning</b>, dan <b>Data Science</b>. Saya lulus dari
-          Bangkit Academy Batch 2 pada learning path Machine Learning dengan nilai akhir 92.90%, dan
-          memiliki pengalaman proyek nyata di computer vision, NLP, forecasting, dan deployment model
-          ke produksi.
+          Saya seorang ML/DL Engineer &amp; Data Scientist, lulusan <b>Cumlaude</b> Teknik Informatika
+          Universitas Papua dengan IPK 3.76. Fokus saya pada <b>Machine Learning</b>, <b>Deep Learning</b>,
+          dan <b>Data Science</b>. Saya lulus dari Bangkit Academy Batch 2 pada learning path Machine
+          Learning dengan nilai akhir 92.90%, dan memiliki pengalaman proyek nyata di computer vision,
+          NLP, forecasting, dan deployment model ke produksi.
         </p>
         <p>
           Karya saya telah melalui proses publikasi ilmiah — mulai dari ensemble CNN–BiLSTM untuk
@@ -268,8 +311,8 @@
         <h3>Universitas Papua</h3>
         <div class="period">Teknik Informatika · 2022 — 2026</div>
         <p>Fokus studi pada algoritma, rekayasa perangkat lunak, dan kecerdasan buatan.</p>
-        <p> Tugas akhir "Conditional Ensemble CNN–BiLSTM untuk Integrasi Citra Awan dan Data Meteorologi BMKG dalam Prediksi Cuaca Jangka Pendek di Manokwari"</p>
-        <p>Lulus dengan predikat Cumlaude (IPK 3,76)</p>
+        <p>Tugas akhir "Conditional Ensemble CNN–BiLSTM untuk Integrasi Citra Awan dan Data Meteorologi BMKG dalam Prediksi Cuaca Jangka Pendek di Manokwari".</p>
+        <p>Lulus dengan predikat Cumlaude (IPK 3,76).</p>
       </div>
       <div class="tl-item">
         <h3>Bangkit Academy Batch 2 — Machine Learning Cohort</h3>
