@@ -115,6 +115,23 @@
 <a class="skip-link" href="#main-content">Langsung ke konten utama</a>
 <div class="grid-texture"></div>
 
+<!-- ===== BOOT LOADER ===== -->
+<div id="bootLoader" aria-hidden="true">
+  <div class="boot-logo">
+    <div class="boot-line">$ python init_portfolio.py</div>
+    <div class="boot-line">&gt; loading weights for <b>ridho.nf</b>...</div>
+    <div class="boot-line">&gt; warming up render engine</div>
+  </div>
+  <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+</div>
+
+<!-- ===== CUSTOM CURSOR ===== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- ===== SCROLL PROGRESS ===== -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <!-- ===== NAV ===== -->
 <nav class="topnav" aria-label="Navigasi utama">
   <div class="brand">ridho<span>.</span>nf</div>
@@ -126,6 +143,7 @@
     <li><a href="#projects" data-target="projects">Projects</a></li>
     <li><a href="#publications" data-target="publications">Publications</a></li>
     <li><a href="#contact" data-target="contact">Contact</a></li>
+    <span class="nav-pill" id="navPill" aria-hidden="true"></span>
   </ul>
   <div class="train-status" aria-hidden="true">
     <span class="dot"></span>
@@ -160,7 +178,7 @@
         <div class="term-line out" data-text="&gt; bangkit_ml_score: 92.90%"></div>
         <div class="term-line ok" data-text="&gt; status: model converged ✓"><span class="cursor" style="display:none;"></span></div>
       </div>
-      <h1>Ridho Nur <span class="accent">Fauzi</span></h1>
+      <h1 id="scrambleName">Ridho Nur <span class="accent">Fauzi</span></h1>
       <p class="role">
         <b>ML/DL Engineer &amp; Data Scientist</b> — membangun pipeline machine learning yang reproducible,
         dari eksplorasi data hingga model deep learning yang terpublikasi di jurnal terindeks SINTA.
@@ -248,8 +266,10 @@
     <div class="timeline">
       <div class="tl-item">
         <h3>Universitas Papua</h3>
-        <div class="period">Teknik Informatika · 2022 — Sekarang</div>
+        <div class="period">Teknik Informatika · 2022 — 2026</div>
         <p>Fokus studi pada algoritma, rekayasa perangkat lunak, dan kecerdasan buatan.</p>
+        <p> Tugas akhir "Conditional Ensemble CNN–BiLSTM untuk Integrasi Citra Awan dan Data Meteorologi BMKG dalam Prediksi Cuaca Jangka Pendek di Manokwari"</p>
+        <p>Lulus dengan predikat Cumlaude (IPK 3,76)</p>
       </div>
       <div class="tl-item">
         <h3>Bangkit Academy Batch 2 — Machine Learning Cohort</h3>
@@ -454,16 +474,16 @@
       </form>
       <div class="social-col">
         <a class="social-link" href="mailto:ridho.nurfauzi321@gmail.com" target="_blank" rel="noopener noreferrer">
-          <img src="../logo/icons8-email-50.png" alt="Ikon email" width="22" height="22" loading="lazy" decoding="async" /><span>ridho.nurfauzi321@gmail.com</span>
+          <img src="../logo/envelope-solid-full.svg" alt="Ikon email" width="22" height="22" loading="lazy" decoding="async" /><span>ridho.nurfauzi321@gmail.com</span>
         </a>
         <a class="social-link" href="https://www.linkedin.com/in/ridhonurfauzi" target="_blank" rel="noopener noreferrer">
-          <img src="../logo/icons8-linkedin-50.png" alt="Ikon LinkedIn" width="22" height="22" loading="lazy" decoding="async" /><span>linkedin.com/in/ridhonurfauzi</span>
+          <img src="../logo/square-linkedin-brands-solid-full.svg" alt="Ikon LinkedIn" width="22" height="22" loading="lazy" decoding="async" /><span>linkedin.com/in/ridhonurfauzi</span>
         </a>
         <a class="social-link" href="https://github.com/RidhoNurFauzi" target="_blank" rel="noopener noreferrer">
-          <img src="../logo/icons8-github-50.png" alt="Ikon GitHub" width="22" height="22" loading="lazy" decoding="async" /><span>github.com/RidhoNurFauzi</span>
+          <img src="../logo/square-github-brands-solid-full.svg" alt="Ikon GitHub" width="22" height="22" loading="lazy" decoding="async" /><span>github.com/RidhoNurFauzi</span>
         </a>
         <a class="social-link" href="https://scholar.google.com/citations?user=gajzMOAAAAAJ&hl=id" target="_blank" rel="noopener noreferrer">
-          <img src="../logo/icons8-google-scholar-50.png" alt="Ikon Google Scholar" width="22" height="22" loading="lazy" decoding="async" /><span>Google Scholar</span>
+          <img src="../logo/google-scholar-brands-solid-full.svg" alt="Ikon Google Scholar" width="22" height="22" loading="lazy" decoding="async" /><span>Google Scholar</span>
         </a>
       </div>
     </div>
@@ -488,6 +508,10 @@
     </div>
   </div>
 </div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
 <script src="script.js"></script>
 </body>
 </html>
