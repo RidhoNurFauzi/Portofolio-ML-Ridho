@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ridhonurfauzi.com/sitemap.xml
+Sitemap: https://ridhonurfauzi.netlify.app/sitemap.xml
