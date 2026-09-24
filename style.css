@@ -203,7 +203,7 @@ width:40%; animation:shimmer 1.8s ease-in-out infinite;
 @keyframes shimmer{ 0%{transform:translateX(-120%);} 100%{transform:translateX(280%);} }
 @media (max-width:760px){ .skills-grid{grid-template-columns:1fr;} }
 
-/* ---------- EDUCATION ---------- */
+/* ---------- EDUCATION / EXPERIENCE (shared timeline) ---------- */
 .timeline{border-left:1px solid var(--line-strong); padding-left:30px; display:flex; flex-direction:column; gap:34px;}
 .tl-item{position:relative;}
 .tl-item::before{
@@ -216,6 +216,15 @@ background:var(--bg-void); border:2px solid var(--amber); transition:box-shadow 
 .tl-item p{color:var(--text-muted); font-size:14.5px; margin:0 0 10px;}
 .tl-links{display:flex; gap:10px; flex-wrap:wrap;}
 .tl-links a{font-family:var(--mono); font-size:11.5px; color:var(--cyan); border-bottom:1px dotted rgba(94,234,212,0.5);}
+
+/* bullet list used in Experience entries */
+.exp-list{ list-style:none; margin:8px 0 0; padding:0; display:flex; flex-direction:column; gap:9px; }
+.exp-list li{
+color:var(--text-muted); font-size:14.5px; line-height:1.55; padding-left:20px; position:relative;
+}
+.exp-list li::before{
+content:"▹"; position:absolute; left:0; top:0; color:var(--cyan); font-family:var(--mono); font-size:13px;
+}
 
 /* ---------- CERTIFICATIONS ---------- */
 .cert-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;}

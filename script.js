@@ -549,8 +549,8 @@ form.addEventListener('submit', async function(e){
   }
 });
 
-const sections = ['about','skills','education','certifications','projects','publications','contact'];
-const lossValues = [1.85,1.42,1.03,0.71,0.38,0.15,0.04];
+const sections = ['about','skills','education','experience','certifications','projects','publications','contact'];
+const lossValues = [1.85,1.55,1.20,0.95,0.70,0.45,0.20,0.04];
 const navA = document.querySelectorAll('.navlinks a');
 const railNodes = document.querySelectorAll('.rail .node');
 const epochEl = document.getElementById('epochNum');
@@ -575,7 +575,7 @@ function moveNavPill(link){
    threshold. Also wires up staggered-child reveal by tagging
    direct children of grid/list containers as .stagger-child.
 --------------------------------------------------------- */
-document.querySelectorAll('.skills-grid, .cert-grid, .proj-grid, .pub-list, .timeline, .tag-row').forEach(container=>{
+document.querySelectorAll('.skills-grid, .cert-grid, .proj-grid, .pub-list, .timeline, .tag-row, .exp-list').forEach(container=>{
   Array.from(container.children).forEach(child => child.classList.add('stagger-child'));
 });
 
