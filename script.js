@@ -652,3 +652,83 @@ railNodes.forEach(n=>{
     document.getElementById(n.dataset.target).scrollIntoView({behavior:'smooth'});
   });
 });
+
+/* ---------------------------------------------------------
+   PROJECT CAROUSEL — Smooth Continuous Scroll & Manual Drag
+--------------------------------------------------------- */
+(function projectCarousel() {
+  const carousel = document.querySelector('.proj-grid');
+  if (!carousel) return;
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let animationId = null;
+  
+  // Kecepatan geser. Ubah nilai ini jika ingin lebih lambat/cepat (misal: 0.3 atau 1)
+  const speed = 0.5; 
+  let currentScroll = 0; 
+
+  function autoScroll() {
+    if (prefersReducedMotion || isDown) return;
+    
+    currentScroll += speed;
+    carousel.scrollLeft = currentScroll;
+
+    // Jika sudah mencapai ujung mentok kanan, reset ke awal dengan halus
+    if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1) {
+      currentScroll = 0;
+      carousel.scrollLeft = 0;
+    }
+
+    animationId = requestAnimationFrame(autoScroll);
+  }
+
+  function startAutoScroll() {
+    if (!animationId) {
+      currentScroll = carousel.scrollLeft; // Sinkronkan dari posisi terakhir drag
+      animationId = requestAnimationFrame(autoScroll);
+    }
+  }
+
+  function stopAutoScroll() {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+  }
+
+  // Hentikan scroll perlahan saat di-hover atau disentuh
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+  carousel.addEventListener('touchstart', stopAutoScroll, { passive: true });
+  carousel.addEventListener('touchend', startAutoScroll, { passive: true });
+
+  // Logika Drag Manual
+  carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+    stopAutoScroll();
+  });
+  
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+  
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 1.5; // Sensitivitas geseran mouse
+    carousel.scrollLeft = scrollLeft - walk;
+    currentScroll = carousel.scrollLeft; // Update tracking auto-scroll
+  });
+
+  // Mulai animasi pertama kali
+  startAutoScroll();
+})();
