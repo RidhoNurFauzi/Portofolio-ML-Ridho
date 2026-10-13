@@ -526,6 +526,39 @@ document.getElementById('pubModal').addEventListener('click', function(e){
   if(e.target === this) closePubModal();
 });
 
+// ---------- Dashboard modal: Lihat Dashboard / Download Model (.pbix) / GitHub ----------
+function openDaModal(card){
+  const title  = card.dataset.title || 'Dashboard';
+  const imgs   = (card.dataset.imgs || '').split('|').filter(Boolean);
+  const pbix   = (card.dataset.pbix || '').trim();
+  const github = (card.dataset.github || '').trim();
+  const live   = (card.dataset.live || '').trim();
+
+  document.getElementById('daModalName').textContent = title;
+  const box = document.getElementById('daModalButtons');
+  box.innerHTML = '';
+
+  function addBtn(label, href, cls, download){
+    const a = document.createElement('a');
+    a.href = href; a.className = 'pub-modal-btn ' + cls; a.textContent = label;
+    if(download){ a.setAttribute('download', ''); }
+    else { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    box.appendChild(a);
+  }
+
+  imgs.forEach((src, i) => {
+    addBtn(imgs.length > 1 ? '🖼 Lihat Dashboard (Halaman ' + (i+1) + ')' : '🖼 Lihat Dashboard', src, 'pdf-btn');
+  });
+  if(live)   addBtn('🔗 Buka Dashboard Online', live, 'link-btn');
+  if(pbix)   addBtn('⬇ Download Model Dashboard (.pbix)', pbix, 'link-btn', true);
+  if(github) addBtn('💻 Buka GitHub', github, 'link-btn');
+
+  document.getElementById('daModal').classList.add('open');
+}
+function closeDaModal(){ document.getElementById('daModal').classList.remove('open'); }
+document.getElementById('daModal').addEventListener('click', function(e){ if(e.target === this) closeDaModal(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeDaModal(); closePubModal(); } });
+
 // contact form (formspree)
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
@@ -549,8 +582,8 @@ form.addEventListener('submit', async function(e){
   }
 });
 
-const sections = ['about','skills','education','experience','certifications','projects','publications','contact'];
-const lossValues = [1.85,1.55,1.20,0.95,0.70,0.45,0.20,0.04];
+const sections = ['about','skills','education','experience','certifications','projects','analytics','publications','contact'];
+const lossValues = [1.85,1.60,1.35,1.10,0.85,0.60,0.40,0.20,0.04];
 const navA = document.querySelectorAll('.navlinks a');
 const railNodes = document.querySelectorAll('.rail .node');
 const epochEl = document.getElementById('epochNum');
@@ -575,7 +608,7 @@ function moveNavPill(link){
    threshold. Also wires up staggered-child reveal by tagging
    direct children of grid/list containers as .stagger-child.
 --------------------------------------------------------- */
-document.querySelectorAll('.skills-grid, .cert-grid, .proj-grid, .pub-list, .timeline, .tag-row, .exp-list').forEach(container=>{
+document.querySelectorAll('.skills-grid, .cert-grid, .proj-grid, .pub-list, .timeline, .tag-row, .exp-list, .da-grid, .da-flow').forEach(container=>{
   Array.from(container.children).forEach(child => child.classList.add('stagger-child'));
 });
 
